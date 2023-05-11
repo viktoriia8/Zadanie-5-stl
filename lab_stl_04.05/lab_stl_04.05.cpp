@@ -7,7 +7,7 @@
 #include <algorithm>
 
 using namespace std;
-bool comparepunkty(Team a, Team b) {
+/*bool comparepunkty(Team a, Team b) {
     if (a.punkty == b.punkty) {
         if (a.wygrane == b.wygrane) {
             if (a.przegrane == b.przegrane) {
@@ -22,6 +22,13 @@ bool comparepunkty(Team a, Team b) {
     }
     else return(a.punkty > b.punkty);
                         
+};*/
+bool comparepunkty(Team a, Team b) {
+    if (a.getPunkty() != b.getPunkty()) return(a.getPunkty() > b.getPunkty());
+    else if (a.getWygrane() != b.getWygrane()) return (a.getWygrane() > b.getWygrane());
+    else if (a.getPrzegrane() != b.getPrzegrane()) return (a.getPrzegrane() < b.getPrzegrane());
+    else if (a.getGole() != b.getGole()) return (a.getGole() > b.getGole());
+    else return (a.getStraty() < b.getStraty());
 };
 int main()
 {
